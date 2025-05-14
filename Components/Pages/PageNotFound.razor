@@ -1,0 +1,24 @@
+﻿@*@page "/{*Path}"*@ @*ToDo: Me esta genterando error, buscar como solucionarlo u otra manera de hacerlo*@
+
+@inject LanguagesManager Language
+@inject NavigationManager Navigation
+
+<h1>404 - @GetValueByKey("pdf")</h1>
+<p>@GetValueByKey("message") @GetValueByKey("route")</p>
+<p>@GetValueByKey("route"): @Navigation.Uri</p>
+
+@code {
+    [Parameter]
+    public string? Path { get; set; }
+
+    private readonly string componentName = "PDF";
+
+    protected override async Task OnInitializedAsync() {
+        Language.LanguageChanged += () => InvokeAsync(StateHasChanged);
+        await base.OnInitializedAsync();
+    }
+
+    private string GetValueByKey(string key) {
+        return Language.GetValueByKey(componentName, key);
+    }
+}

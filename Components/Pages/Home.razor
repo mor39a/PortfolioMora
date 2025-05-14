@@ -1,0 +1,52 @@
+﻿@page "/"
+
+@inject LanguagesManager Language
+@inject NavigationManager Navigation
+@inject IJSRuntime jsRuntime
+
+<PageTitle>@GetValueByKey("portfolio") - Santiago Mora</PageTitle>
+
+<meta property="og:title" content="Santiago Mora"/> @*ToDo*@
+<meta property="og:description" content="Soy desarrollador..."/>
+
+<style>
+    .horizont-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .profile-photo {
+        width: 10%;
+        height: auto;
+        margin-inline: 20px;
+        border-radius: 50%;
+        border: 7px solid var(--main-color);
+    }
+    .divition {
+        border-bottom: 2px solid #fff;
+        margin-top: 100px;
+        margin-inline: auto;
+        width: 75%;
+    }
+</style>
+
+<section id="about-me" style="margin-top: 30px;">
+    <div class="horizont-content">
+        <dev style="flex:1;"/>
+        <img class="profile-photo" style="flex:1;" alt=@GetValueByKey("profile-photo") src="./Resources/Images/ProfilePhoto.png" />
+        <div style="flex:4;">
+            <p>@GetValueByKey("presentation")</p>
+            <h1>Santiago Mora</h1>
+            <p>@GetValueByKey("about")</p>
+            <div class="horizont-content" style="justify-content: start; margin-top: 30px;">
+                <a href="https://github.com/mor39a" target="_blank" rel="noopener" style="margin-right:30px;"><button type="button" class="btn-primary" tabindex="-1">GitHub</button></a>
+                <a style="margin-right: 30px;" href="https://linkedin.com/in/mora39" target="_blank" rel="noopener"><button type="button" class="btn-primary" tabindex="-1">LinkedIn</button></a>
+                <button type="reset" class="btn-primary" style="margin-right: 30px;" @onclick='() => Navigation.NavigateTo("/Curriculum")'>CV</button>
+                <a href="mailto:s.mor.a0396@gmail.com?Subject=Hi%20Mora"><button type="button" class="btn-primary" tabindex="-1">Email</button></a>
+                @*DoTo: Estilizar el <a> para no adidarle el button*@
+            </div>
+        </div>
+        <dev style="flex:1;" />
+    </div>
+    <div class="divition"/> @*ToDo: Probar <hr>*@
+</section>

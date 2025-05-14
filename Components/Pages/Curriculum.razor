@@ -1,0 +1,16 @@
+﻿@page "/Curriculum"
+@page "/CV"
+
+@inject LanguagesManager Language
+
+<PageTitle>Curriculum Vitae - Santiago Mora</PageTitle>
+
+<h1 style="margin-left: 15%;">@GetValueByKey("curriculum")</h1>
+
+
+
+<div align="center">
+    <hr style="width: 85%; height: 2px; background: white;" />
+    @*ToDo: Cuando el CV este terminado, probar el embed de canva*@
+    <embed title="CV" type="application/pdf" src=@pathName style="width:70%;height:1000px;" />
+</div>

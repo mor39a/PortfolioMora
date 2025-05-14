@@ -1,0 +1,24 @@
+﻿@inject LanguagesManager Language
+
+<div class="top-row navbar navbar-dark navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="" @onclick='() => _active("about")'><img src="favicon.png" alt="Logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapsed" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link @activeAboutMe" aria-current="page" href="#about-me" @onclick='() => _active("about")'>@GetValueByKey("about")</a>
+                <a class="nav-link @activeProjects" href="#projects" @onclick='() => _active("projects")'>@GetValueByKey("projects")</a>
+                <a class="nav-link @activeSkills" href="#skills" @onclick='() => _active("skills")'>@GetValueByKey("skills")</a>
+                <a class="nav-link @activeCurriculum" href="/Curriculum" @onclick='() => _active("curriculum")'>Curriculum</a>
+                <a class="nav-link @activeContact" href="#contact" @onclick='() => _active("contact")'>@GetValueByKey("contact")</a>
+            </div>
+            <InputSelect @bind-Value="SelectedLanguage" align="right"> @*ToDo: Re hacer mas bonito*@
+                @foreach (var availableLanguage in availableLanguages) {
+                    <option value="@availableLanguage">@availableLanguage</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+</div>

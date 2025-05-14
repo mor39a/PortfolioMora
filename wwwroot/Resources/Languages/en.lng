@@ -1,0 +1,18 @@
+# NavMenu
+NavMenu;;about;;About me
+NavMenu;;projects;;Projects
+NavMenu;;skills;;Skills
+NavMenu;;contact;;Contact
+
+#PageDontFound
+PDF;;pdf;;Page not found
+PDF;;route;;Route
+PDF;;message;;Sorry, the page could not be found.
+# Home
+Home;;portfolio;;Portfolio
+Home;;profile-photo;;Profile-Photo
+Home;;presentation;;Hello! My name is
+Home;;about;;Software developer autodidact. Passionate about solving problems, especially in programming; and about constantly acquiring new knowledge and skills.
+
+#CV
+CV;;curriculum;;Resume

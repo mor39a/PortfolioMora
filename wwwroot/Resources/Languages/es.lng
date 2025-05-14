@@ -1,0 +1,19 @@
+# NavMenu
+NavMenu;;about;;Sobre mi
+NavMenu;;projects;;Proyectos
+NavMenu;;skills;;Habilidades
+NavMenu;;contact;;Contacto
+
+#PageDontFound
+PDF;;pdf;;Pagina no encontrada
+PDF;;route;;Ruta
+PDF;;message;;Lo sentimos, no fue posible encontrar la pagina.
+
+# Home
+Home;;portfolio;;Portafolio
+Home;;profile-photo;;Foto-de-Perfil
+Home;;presentation;;¡Hola! Mi nombre es
+Home;;about;;Desarrollador de Software autodidacta. Apasionado por resolver problemas, especialmente en cuanto a la programacion, y por adquirir nuevos conocimientos y habilidades constantentemente.
+
+#CV
+CV;;curriculum;;Hoja de Vida

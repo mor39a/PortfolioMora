@@ -1,0 +1,30 @@
+﻿@inherits LayoutComponentBase
+@inject LanguagesManager Language
+@inject IJSRuntime jsRuntime
+
+<div class="page">
+    <main>
+        <nav style="position: fixed; width: 100%; z-index: 10;">
+            <NavMenu />
+        </nav>
+
+        <article class="content px-4" style="padding: 60px;">
+            @Body
+        </article>
+    </main>
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        if (firstRender) {
+            await Language.GetBrowserLanguage(jsRuntime);
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}
