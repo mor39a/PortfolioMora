@@ -1,4 +1,13 @@
-﻿namespace PortfolioMora.Components.Layout {
+﻿/*---------------------------------------------
+    
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------*/
+
+namespace PortfolioMora.Components.Layout {
     public partial class NavMenu {
 
         #region Private Declarations

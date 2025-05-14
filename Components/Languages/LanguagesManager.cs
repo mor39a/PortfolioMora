@@ -1,4 +1,13 @@
-﻿using Microsoft.JSInterop;
+﻿/*---------------------------------------------
+    
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------*/
+
+using Microsoft.JSInterop;
 
 namespace PortfolioMora.Components.Languages {
     public class LanguagesManager {

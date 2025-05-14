@@ -1,4 +1,13 @@
-﻿namespace PortfolioMora.Components.Pages {
+﻿/*---------------------------------------------
+    
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------*/
+
+namespace PortfolioMora.Components.Pages {
     public partial class Curriculum {
 
         #region Private Declarations
