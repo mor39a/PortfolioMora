@@ -1,4 +1,4 @@
-# Portfolio Santiago Mora
+# Santiago Mora's Portfolio
 
 > [!NOTE]
 > * The next image is just a wireframe and isn't the final product.
