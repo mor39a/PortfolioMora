@@ -17,9 +17,13 @@
             <NavMenu />
         </nav>
 
-        <article class="content px-4" style="padding: 60px;">
+        <article id="main-container" class="content px-4" style="padding: 60px; min-height: calc(100vh - 100px);">
             @Body
         </article>
+
+        <footer id="footer" style="width: 100%;">
+            <FooterLayout />
+        </footer>
     </main>
 </div>
 
@@ -33,6 +37,7 @@
     protected override async Task OnAfterRenderAsync(bool firstRender) {
         if (firstRender) {
             await Language.GetBrowserLanguage(jsRuntime);
+            await jsRuntime.InvokeVoidAsync("initializeContainerHeight");
         }
         await base.OnAfterRenderAsync(firstRender);
     }

@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="App.css" />
+    <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="PortfolioMora.styles.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <HeadOutlet @rendermode="InteractiveServer" />
@@ -25,14 +25,44 @@
     <Routes @rendermode="InteractiveServer" />
     <script src="_framework/blazor.web.js"></script>
     <script>
+
+        /*-----------------------------------------------------------------
+        
+            Languages
+        
+        -----------------------------------------------------------------*/
+
         window.getBrowserLanguage = () => {
             return navigator.languages && navigator.languages.length
                 ? navigator.languages[0]
                 : navigator.language || navigator.userLanguage || 'en-US';
         };
+
         window.setHtmlLang = function (lang) {
             document.documentElement.lang = lang;
         };
+
+        /*-----------------------------------------------------------------
+
+            Container Height
+
+        -----------------------------------------------------------------*/
+
+        window.adjustContainerHeight = function () {
+            const footer = document.getElementById('footer');
+            const container = document.getElementById('main-container');
+
+            if (footer && container) {
+                const footerHeight = footer.offsetHeight;
+                container.style.minHeight = `calc(100vh - ${footerHeight}px)`;
+            }
+        };
+
+        window.initializeContainerHeight = function () {
+            window.adjustContainerHeight();
+            window.addEventListener('resize', window.adjustContainerHeight);
+        };
+
     </script>
 </body>
 

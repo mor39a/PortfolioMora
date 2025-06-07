@@ -21,7 +21,7 @@ html, .content {
     background: #000000;
 }
 
-h1 {
+h1, h2 {
     color: var(--main-color);
 }
 

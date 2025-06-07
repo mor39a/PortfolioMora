@@ -4,10 +4,18 @@ NavMenu;;projects;;Projects
 NavMenu;;skills;;Skills
 NavMenu;;contact;;Contact
 
-#PageDontFound
+# Footer
+Footer;;nav;;Navigation
+Footer;;contact-me;;Contact me
+Footer;;made;;Made with love with Blazor
+Footer;;source;;Source code
+Footer;;license;;Mit License
+
+# PageDontFound
 PDF;;pdf;;Page not found
 PDF;;route;;Route
 PDF;;message;;Sorry, the page could not be found.
+
 # Home
 Home;;portfolio;;Portfolio
 Home;;profile-photo;;Profile-Photo
@@ -16,3 +24,7 @@ Home;;about;;Software developer autodidact. Passionate about solving problems, e
 
 #CV
 CV;;curriculum;;Resume
+CV;;no-see;;Can't see it?
+CV;;change-viewer;;Change the viewer
+CV;;or;;or
+CV;;download;;Download it

@@ -14,6 +14,7 @@ namespace PortfolioMora.Components.Pages {
 
         private readonly string componentName = "CV";
         private string pathName = "./Resources/PDFs/CV.en.pdf";
+        private int viewer = 0;
 
         #endregion
 
@@ -30,6 +31,12 @@ namespace PortfolioMora.Components.Pages {
 
         private string GetValueByKey(string key) {
             return Language.GetValueByKey(componentName, key);
+        }
+
+        private void ChangeViewer() {
+            viewer++;
+            if (viewer > 1) viewer = 0;
+            StateHasChanged();
         }
 
         #endregion
