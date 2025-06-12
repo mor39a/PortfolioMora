@@ -7,15 +7,12 @@
 
 ---------------------------------------------*/
 
-using Microsoft.JSInterop;
-using PortfolioMora.Components.Projects;
-
 namespace PortfolioMora.Components.Pages {
-    public partial class Home {
+    public partial class Projects {
 
         #region Private Declarations
 
-        private readonly string componentName = "Home";
+        private readonly string componentName = "Projects";
         private Components.Projects.Projects? projects;
 
         #endregion
@@ -42,10 +39,6 @@ namespace PortfolioMora.Components.Pages {
 
         private string GetValueByKey(string key) {
             return Language.GetValueByKey(componentName, key);
-        }
-
-        private async Task OpenPageNewWindows(string page) {
-            await jsRuntime.InvokeVoidAsync("window.open", page, "_blank", "noopener");
         }
 
         #endregion

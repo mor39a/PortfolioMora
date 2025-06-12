@@ -1,0 +1,69 @@
+﻿<!---------------------------------------------
+
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------->
+
+@inject IWebHostEnvironment env
+@inject ILogger<TechnologiesButton> logger
+@inject NavigationManager Navigation
+
+<style>
+    .projectContainer {
+        background-color: var(--background-color);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        min-height: 50px;
+        padding: 15px;
+    }
+
+    .projectInfo {
+        flex: 2;
+        text-align: left;
+    }
+
+    .active-project-box {
+        color: white;
+        border: 1px solid green;
+        width: fit-content;
+        height: fit-content;
+        padding-inline: 10px;
+        margin-bottom: 8px;
+    }
+
+    .projectTechnologies {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+        margin-top: 5px;
+    }
+</style>
+
+<div class="projectContainer">
+    @if (!(string.IsNullOrEmpty(ProjectPhotoName) || ProjectPhotoName.ToLower() == "none")) {
+        string PhotoPath = Path.Combine(env.WebRootPath, "Resources", "Projects", "Images", $"{ProjectPhotoName}.png");
+        <div style="flex: 1;">
+            <img style="margin: 20px;" alt=@ProjectName src=@PhotoPath />
+        </div>
+    }    
+    <div class="projectInfo">
+        <div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
+            <h2 style="cursor: pointer;" @onclick='() => Navigation.NavigateTo($"/Project/{ProjectName}")'>@ProjectName</h2>
+            @if (!string.IsNullOrEmpty(ProjectState)) {
+                <div class="active-project-box">@ProjectState</div>
+            }
+        </div>        
+        <p>@ProjectDescription</p>
+        <div class="projectTechnologies">
+            @foreach (string technology in ProjectTechnologies) {
+                string[] _technology = technology.Split('=');
+                <TechnologiesButton TechnologyName=@_technology[0] TechnologyLink="@(_technology.Length > 1 ? _technology[1].Trim('\"') : null)" />
+            }
+        </div>
+    </div>
+</div>

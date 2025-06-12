@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Resources\Images\" />
+    <Folder Include="wwwroot\Resources\Projects\Images\" />
+    <Folder Include="wwwroot\Resources\Technologies\" />
   </ItemGroup>
 
 </Project>

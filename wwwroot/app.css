@@ -21,7 +21,7 @@ html, .content {
     background: #000000;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: var(--main-color);
 }
 
@@ -39,14 +39,17 @@ a, .btn-link {
 }
 
 .btn-primary {
-    color: #FFFFFF;
-    background: none;
-    border-color: var(--main-color) !important;
     width: 100px;
-    border-bottom-left-radius: var(--bottom-radius);
-    border-bottom-right-radius: var(--bottom-radius);
-    border-top-left-radius: var(--bottom-radius);
-    border-top-right-radius: var(--bottom-radius);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer; background: none;
+    border: 1px solid var(--main-color) !important;
+    border-radius: var(--bottom-radius);
 }
 
 .btn-primary:hover {

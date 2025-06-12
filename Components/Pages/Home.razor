@@ -10,15 +10,23 @@
 @page "/"
 
 @inject LanguagesManager Language
+@inject ProjectsManager ProjectManager
 @inject NavigationManager Navigation
 @inject IJSRuntime jsRuntime
 
 <PageTitle>@GetValueByKey("portfolio") - Santiago Mora</PageTitle>
 
-<meta property="og:title" content="Santiago Mora"/> @*ToDo*@
-<meta property="og:description" content="Soy desarrollador..."/>
+<meta property="og:title" content="Santiago Mora"/>
+<meta property="og:description" content="@GetValueByKey("about")" />
+<meta property="og:image" /> @*ToDo*@
 
 <style>
+    .divition {
+        border-bottom: 2px solid #fff;
+        margin-top: 50px;
+        margin-inline: auto;
+        width: 75%;
+    }
     .horizont-content {
         display: flex;
         align-items: center;
@@ -31,15 +39,15 @@
         border-radius: 50%;
         border: 7px solid var(--main-color);
     }
-    .divition {
-        border-bottom: 2px solid #fff;
-        margin-top: 100px;
-        margin-inline: auto;
-        width: 75%;
+    .project {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-block: 30px;
     }
 </style>
 
-<section id="about-me" style="margin-top: 30px;">
+<section id="about-me" style="margin-top: 20px;">
     <div class="horizont-content">
         <dev style="flex:1;"/>
         <img class="profile-photo" style="flex:1;" alt=@GetValueByKey("profile-photo") src="./Resources/Images/ProfilePhoto.png" />
@@ -48,14 +56,28 @@
             <h1>Santiago Mora</h1>
             <p>@GetValueByKey("about")</p>
             <div class="horizont-content" style="justify-content: start; margin-top: 30px;">
-                <a href="https://github.com/mor39a" target="_blank" rel="noopener" style="margin-right:30px;"><button type="button" class="btn-primary" tabindex="-1">GitHub</button></a>
-                <a style="margin-right: 30px;" href="https://linkedin.com/in/mora39" target="_blank" rel="noopener"><button type="button" class="btn-primary" tabindex="-1">LinkedIn</button></a>
+                <a class="btn-primary" style="margin-right:30px;" href="https://github.com/mor39a" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn-primary" style="margin-right: 30px;" href="https://linkedin.com/in/mora39" target="_blank" rel="noopener">LinkedIn</a>
                 <button type="reset" class="btn-primary" style="margin-right: 30px;" @onclick='() => Navigation.NavigateTo("/Curriculum")'>CV</button>
-                <a href="mailto:s.mor.a0396@gmail.com?Subject=Hi%20Mora"><button type="button" class="btn-primary" tabindex="-1">Email</button></a>
+                <a class="btn-primary" href="mailto:s.mor.a0396@gmail.com?Subject=Hi%20Mora">Email</a>
                 @*DoTo: Estilizar el <a> para no adidarle el button*@
             </div>
         </div>
         <dev style="flex:1;" />
     </div>
-    <div class="divition"/> @*ToDo: Probar <hr>*@
 </section>
+<div class="divition"/> @*ToDo: Probar <hr>*@
+<section id="projects" style="margin-top: 15px; margin-inline: 12%;">
+    <h1>@GetValueByKey("projects")</h1>
+    @for (int count = 0; count < 3; count++) {
+        if (projects == null || projects.projects.Values.ToArray().Length <= count) break;
+        Components.Projects.Project project = projects.projects.Values.ToArray()[count];
+        <div class="project">
+            <ProjectViewer ProjectName=@project.name ProjectState=@((project.active) ? GetValueByKey("active-project") : null) ProjectDescription=@project.description ProjectTechnologies=@project.technologies ProjectPhotoName=@project.photoName />
+        </div>
+    }
+    <div style="display: flex; justify-content: center;">
+        <div class="btn-primary" @onclick='() => Navigation.NavigateTo("/Projects")'>@GetValueByKey("see-more")</div>
+    </div>
+</section>
+<div class="divition" />

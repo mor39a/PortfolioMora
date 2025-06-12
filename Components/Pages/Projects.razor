@@ -1,0 +1,35 @@
+﻿<!---------------------------------------------
+
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------->
+
+@page "/Projects"
+
+@inject LanguagesManager Language
+@inject ProjectsManager ProjectManager
+
+<PageTitle>@GetValueByKey("projects") - Santiago Mora</PageTitle>
+
+<style>
+    .project {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-inline: 5%;
+        margin-block: 30px;
+    }
+</style>
+
+<h1 style="text-align: center;">@GetValueByKey("projects")</h1>
+
+@if (projects != null) {
+    @foreach (Components.Projects.Project project in projects.projects.Values) {
+        <div class="project">
+            <ProjectViewer ProjectName=@project.name ProjectState=@((project.active) ? GetValueByKey("active") : null) ProjectDescription=@project.description ProjectTechnologies=@project.technologies ProjectPhotoName=@project.photoName />
+        </div>
+    }
+}

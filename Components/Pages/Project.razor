@@ -1,0 +1,78 @@
+﻿<!---------------------------------------------
+
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------->
+
+@page "/Project/{projectName?}"
+
+@inject IWebHostEnvironment env
+@inject LanguagesManager Language
+@inject NavigationManager Navigation
+@inject ProjectsManager ProjectManager
+
+<style>
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        margin-inline: 5%;
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .active-project-box {
+        color: white;
+        border: 2px solid green;
+        width: fit-content;
+        height: fit-content;
+        padding-inline: 10px;
+        padding-block: 2px;
+    }
+    
+    .project-technologies {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+        margin-top: 5px;
+    }
+</style>
+
+<PageTitle>@GetValueByKey("project"): @projectName - Santiago Mora</PageTitle>
+
+@if (project != null) {
+    <div style="display: flex; justify-content: center;">
+        <div class="project-container">
+            <div class="project-header">
+                <h1>@projectName</h1>
+                @if (project!.active) {
+                    <div class="active-project-box">@GetValueByKey("active")</div>
+                }
+            </div>
+
+            @if (!(string.IsNullOrEmpty(project!.photoName) || project.photoName.ToLower() == "none")) {
+                string PhotoPath = Path.Combine(env.WebRootPath, "Resources", "Projects", "Images", $"{project.photoName}.png");
+                <img style="margin: 20px;" alt=@projectName src=@PhotoPath />
+            }
+            <p>@project.description</p>
+
+            <div class="project-technologies">
+                @foreach (string technology in project.technologies) {
+                    string[] _technology = technology.Split('=');
+                    <TechnologiesButton TechnologyName=@_technology[0] TechnologyLink="@(_technology.Length > 1 ? _technology[1].Trim('\"') : null)" />
+                }
+            </div>
+        </div>
+    </div>
+} else {
+    <h1>@GetValueByKey("loading")</h1>
+    @project
+}

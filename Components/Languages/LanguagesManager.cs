@@ -88,11 +88,10 @@ namespace PortfolioMora.Components.Languages {
                         }
                     }
                 } else {
-                    logger.LogError($"Path {path} dont found.");
-                }              
-            }
-            catch (Exception e) {
-                logger.LogError("Error: " + e.Message);
+                    logger.LogCritical($"Path {path} dont found.");
+                }
+            } catch (Exception e) {
+                logger.LogCritical("Error: " + e.Message);
             }
         }
 

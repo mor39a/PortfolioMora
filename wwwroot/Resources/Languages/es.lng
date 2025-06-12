@@ -21,10 +21,22 @@ Home;;portfolio;;Portafolio
 Home;;profile-photo;;Foto-de-Perfil
 Home;;presentation;;¡Hola! Mi nombre es
 Home;;about;;Desarrollador de Software autodidacta. Apasionado por resolver problemas, especialmente en cuanto a la programacion, y por adquirir nuevos conocimientos y habilidades constantentemente.
+Home;;projects;;Proyectos
+Home;;active-project;;Proyecto Activo
+Home;;see-more;;Ver Más
 
-#CV
+# CV
 CV;;curriculum;;Hoja de Vida
 CV;;no-see;;¿No puedes verlo?
 CV;;change-viewer;;Cambia de visualizador
 CV;;or;;o
 CV;;download;;Descárgalo
+
+# Projects
+Projects;;projects;;Proyectos
+Projects;;active;;Proyecto Activo
+
+# Project
+Project;;loading;;Cargando
+Project;;project;;Proyecto
+Project;;active;;Proyecto Activo

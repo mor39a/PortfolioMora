@@ -1,6 +1,7 @@
 using Microsoft.Extensions.FileProviders;
 using PortfolioMora.Components;
 using PortfolioMora.Components.Languages;
+using PortfolioMora.Components.Projects;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddSingleton<LanguagesManager>();
+builder.Services.AddSingleton<ProjectsManager>();
 
 var app = builder.Build();
 

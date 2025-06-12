@@ -1,0 +1,53 @@
+﻿<!---------------------------------------------
+
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------->
+
+@inject NavigationManager Navigation
+@inject IJSRuntime jsRuntime
+@inject IWebHostEnvironment env
+@inject ILogger<TechnologiesButton> logger
+
+<style>
+    .TechnologiesButton {
+        background-color: transparent;
+        min-width: 100px;
+        height: 30px;
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 7px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        text-align: center;
+    }
+
+    .TechnologiesButton:hover {
+            background-color: var(--main-color);
+    }
+
+    .Clickeable {
+        cursor: pointer;
+    }
+
+    .NoClickeable {
+        cursor: default;
+    }
+
+    .TechnologiesIcon {
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+    }
+</style>
+
+<div class="TechnologiesButton @(!string.IsNullOrEmpty(TechnologyLink) ? "Clickeable" : "NoClickeable")" @onclick="OpenLink">
+    @if (ExistPath()) {
+        <img class="TechnologiesIcon" src=@IconPath />
+    }
+    <p style="width: 100%;">@TechnologyName</p>
+</div>
