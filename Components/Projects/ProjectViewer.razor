@@ -12,7 +12,7 @@
 @inject NavigationManager Navigation
 
 <style>
-    .projectContainer {
+    .project-container {
         background-color: var(--background-color);
         display: flex;
         justify-content: center;
@@ -21,7 +21,7 @@
         padding: 15px;
     }
 
-    .projectInfo {
+    .project-info {
         flex: 2;
         text-align: left;
     }
@@ -35,7 +35,7 @@
         margin-bottom: 8px;
     }
 
-    .projectTechnologies {
+    .project-technologies {
         display: flex;
         justify-content: start;
         align-items: center;
@@ -44,14 +44,14 @@
     }
 </style>
 
-<div class="projectContainer">
+<div class="project-container">
     @if (!(string.IsNullOrEmpty(ProjectPhotoName) || ProjectPhotoName.ToLower() == "none")) {
         string PhotoPath = Path.Combine(env.WebRootPath, "Resources", "Projects", "Images", $"{ProjectPhotoName}.png");
         <div style="flex: 1;">
             <img style="margin: 20px;" alt=@ProjectName src=@PhotoPath />
         </div>
     }    
-    <div class="projectInfo">
+    <div class="project-info">
         <div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
             <h2 style="cursor: pointer;" @onclick='() => Navigation.NavigateTo($"/Project/{ProjectName}")'>@ProjectName</h2>
             @if (!string.IsNullOrEmpty(ProjectState)) {
@@ -59,7 +59,7 @@
             }
         </div>        
         <p>@ProjectDescription</p>
-        <div class="projectTechnologies">
+        <div class="project-technologies">
             @foreach (string technology in ProjectTechnologies) {
                 string[] _technology = technology.Split('=');
                 <TechnologiesButton TechnologyName=@_technology[0] TechnologyLink="@(_technology.Length > 1 ? _technology[1].Trim('\"') : null)" />

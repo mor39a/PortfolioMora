@@ -15,13 +15,13 @@
 <PageTitle>Curriculum Vitae - Santiago Mora</PageTitle>
 
 <style>
-    .cvLink {
+    .cv-link {
         --linkColor: #777;
         text-decoration: none;
         color: var(--linkColor);
     }
 
-    .cvLink:hover {
+    .cv-link:hover {
         text-decoration: underline;
             color: var(--linkColor);
         cursor: pointer;
@@ -35,7 +35,7 @@
     <hr style="width: 85%; height: 2px; background: white;" />
     <p style="text-align: right; padding-right: 15%; color: #aaa;">
         @GetValueByKey("no-see")
-        <br><span class="cvLink" @onclick=ChangeViewer>@GetValueByKey("change-viewer")</span> @GetValueByKey("or") <a class="cvLink" href=@pathName download="Curriculum_Santiago_Mora.pdf">@GetValueByKey("download")</a>
+        <br><span class="cv-link" @onclick=ChangeViewer>@GetValueByKey("change-viewer")</span> @GetValueByKey("or") <a class="cv-link" href=@pathName download="Curriculum_Santiago_Mora.pdf">@GetValueByKey("download")</a>
     </p>
     @if (viewer == 1) {
         @*ToDo: Cuando el CV este terminado, probar el embed de canva*@
