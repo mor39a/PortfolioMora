@@ -11,41 +11,6 @@
 @inject NavigationManager Navigation
 @inject IJSRuntime jsRuntime
 
-<style>
-    .footer-main-container {
-        background-color: var(--background-color);
-        min-height: 50px;
-        width: 100%;
-        padding-inline: 5%;
-        padding-block: 20px;
-    }
-
-    .footer-sub-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .footer-section {
-        flex: 1;
-        --footerSectionColor: #aaa;
-    }
-
-    .sub-footer {
-        --subFooterColor: #777;
-        color: var(--subFooterColor) !important;
-    }
-
-    .footer-link {
-        text-decoration: none;
-        color: var(--footerSectionColor);
-    }
-
-    .footer-link:hover {
-        text-decoration: underline;
-        color: var(--footerSectionColor);
-    }
-</style>
-
 <div class="footer-main-container" align="center">
     <div class="footer-sub-container">
         <div class="footer-section" style="text-align: start;">

@@ -1,0 +1,45 @@
+﻿.home-section {
+    margin-top: 15px;
+    margin-inline: 12%;
+}
+
+.divition {
+    border-bottom: 2px solid #fff;
+    margin-top: 50px;
+    margin-inline: auto;
+    width: 75%;
+}
+
+.horizont-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 10%;
+    height: auto;
+    margin-inline: 20px;
+    border-radius: 50%;
+    border: 7px solid var(--main-color);
+}
+
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 30px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.skill {
+    width: calc((100% - (40px * 2 * 3)) / 3);
+    margin-inline: 40px;
+    margin-top: 50px;
+}

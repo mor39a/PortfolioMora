@@ -12,31 +12,6 @@
 @inject IWebHostEnvironment env
 @inject ILogger<TechnologiesButton> logger
 
-<style>
-    .technologies-button {
-        background-color: transparent;
-        min-width: 100px;
-        height: 30px;
-        padding: 10px;
-        border: 1px solid #fff;
-        border-radius: 7px;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        text-align: center;
-    }
-
-    .technologies-button:hover {
-            background-color: var(--main-color);
-    }
-
-    .technologies-icon {
-        height: 20px;
-        width: 20px;
-        margin-right: 10px;
-    }
-</style>
-
 <div class="technologies-button @(!string.IsNullOrEmpty(TechnologyLink) ? "clickeable" : "no-clickeable")" @onclick="OpenLink">
     @if (ExistPath()) {
         <img class="technologies-icon" src=@IconPath />

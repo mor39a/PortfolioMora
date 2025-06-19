@@ -1,0 +1,11 @@
+﻿.cv-link {
+    --linkColor: #777;
+    text-decoration: none;
+    color: var(--linkColor);
+}
+
+    .cv-link:hover {
+        text-decoration: underline;
+        color: var(--linkColor);
+        cursor: pointer;
+    }

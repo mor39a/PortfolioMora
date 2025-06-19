@@ -1,0 +1,31 @@
+﻿.project-container {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 50px;
+    padding: 15px;
+}
+
+.project-info {
+    flex: 2;
+    text-align: left;
+}
+
+.active-project-box {
+    color: white;
+    border: 1px solid green;
+    width: fit-content;
+    height: fit-content;
+    padding-inline: 10px;
+    margin-bottom: 8px;
+    cursor: default;
+}
+
+.project-technologies {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
