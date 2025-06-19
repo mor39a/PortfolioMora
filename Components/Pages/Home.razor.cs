@@ -44,10 +44,6 @@ namespace PortfolioMora.Components.Pages {
             return Language.GetValueByKey(componentName, key);
         }
 
-        private async Task OpenPageNewWindows(string page) {
-            await jsRuntime.InvokeVoidAsync("window.open", page, "_blank", "noopener");
-        }
-
         #endregion
 
     }

@@ -7,9 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\resources\skills\Info.skl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\resources\skills\Info.skl" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\Resources\Images\" />
+    <Folder Include="wwwroot\Resources\Skills\" />
     <Folder Include="wwwroot\Resources\Projects\Images\" />
     <Folder Include="wwwroot\Resources\Technologies\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\resources\skills\Info.skl" />
   </ItemGroup>
 
 </Project>

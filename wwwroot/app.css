@@ -106,3 +106,11 @@ h1:focus {
 .navbar-dark {
     background: var(--background-color) !important;
 }
+
+.clickeable {
+    cursor: pointer;
+}
+
+.no-clickeable {
+    cursor: default;
+}

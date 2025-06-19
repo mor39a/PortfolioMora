@@ -1,0 +1,66 @@
+﻿<!---------------------------------------------
+
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------->
+
+@inject IWebHostEnvironment env
+@inject IJSRuntime jsRuntime
+
+<style>
+    .skill-main-container {
+        background-color: var(--background-color);
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    .skill-container {        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+    .skill-img {
+        height: 40px;
+        width: auto;
+        margin-inline: 10px;
+        margin-top: 10px;
+    }
+    .skill-text {
+        height: 40px;
+        min-width: 40px;
+        padding-inline: 5px;
+        margin-inline: 10px;
+        margin-top: 10px;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Comic Sans MS';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="skill-main-container">
+    <h2>@SkillType</h2>
+    <div class="skill-container">
+        @foreach (Skill skill in Skills) {
+            string clickClass = (!string.IsNullOrWhiteSpace(skill.url)) ? "clickeable" : "no-clickeable";
+            @if (File.Exists(Path.Combine(env.WebRootPath, "Resources", "Skills", "Images", $"{GetIconFileName(skill.iconName)}.png"))) {
+                <img class="skill-img @clickClass" title=@skill.iconName src=@GetIconPath(skill.iconName) @onclick="() => OpenLink(skill.url)" />
+            } else {
+                <div class="skill-text @clickClass" @onclick="() => OpenLink(skill.url)">
+                    @skill.iconName
+                </div>
+                
+            }
+        }
+    </div>
+</div>

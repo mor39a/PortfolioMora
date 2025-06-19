@@ -11,6 +11,7 @@
 
 @inject LanguagesManager Language
 @inject ProjectsManager ProjectManager
+@inject SkillsManager SkillManager
 @inject NavigationManager Navigation
 @inject IJSRuntime jsRuntime
 
@@ -21,6 +22,10 @@
 <meta property="og:image" /> @*ToDo*@
 
 <style>
+    .home-section {
+        margin-top: 15px;
+        margin-inline: 12%;
+    }
     .divition {
         border-bottom: 2px solid #fff;
         margin-top: 50px;
@@ -45,9 +50,20 @@
         align-items: center;
         margin-block: 30px;
     }
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+    .skill {
+        width: calc((100% - (40px * 2 * 3)) / 3);
+        margin-inline: 40px;
+        margin-top: 50px;
+    }
 </style>
 
-<section id="about-me" style="margin-top: 20px;">
+<section id="about-me" class="home-section" style="margin-top: 20px; margin-inline: 0;">
     <div class="horizont-content">
         <dev style="flex:1;"/>
         <img class="profile-photo" style="flex:1;" alt=@GetValueByKey("profile-photo") src="./Resources/Images/ProfilePhoto.png" />
@@ -58,16 +74,15 @@
             <div class="horizont-content" style="justify-content: start; margin-top: 30px;">
                 <a class="btn-primary" style="margin-right:30px;" href="https://github.com/mor39a" target="_blank" rel="noopener">GitHub</a>
                 <a class="btn-primary" style="margin-right: 30px;" href="https://linkedin.com/in/mora39" target="_blank" rel="noopener">LinkedIn</a>
-                <button type="reset" class="btn-primary" style="margin-right: 30px;" @onclick='() => Navigation.NavigateTo("/Curriculum")'>CV</button>
+                <a class="btn-primary" style="margin-right: 30px;" href="/Curriculum">CV</a>
                 <a class="btn-primary" href="mailto:s.mor.a0396@gmail.com?Subject=Hi%20Mora">Email</a>
-                @*DoTo: Estilizar el <a> para no adidarle el button*@
             </div>
         </div>
         <dev style="flex:1;" />
     </div>
 </section>
 <div class="divition"/> @*ToDo: Probar <hr>*@
-<section id="projects" style="margin-top: 15px; margin-inline: 12%;">
+<section id="projects" class="home-section">
     <h1>@GetValueByKey("projects")</h1>
     @for (int count = 0; count < 3; count++) {
         if (projects == null || projects.projects.Values.ToArray().Length <= count) break;
@@ -81,3 +96,18 @@
     </div>
 </section>
 <div class="divition" />
+<section id="skills" class="home-section">
+    <h1>@GetValueByKey("skills")</h1>
+    <div class="skills">
+        @foreach (string type in SkillManager.SkillTypes) {
+            var translations = SkillManager.Skills.FirstOrDefault(s => s.type == type).typeTranslations;
+            string _type = (translations != null && translations.ContainsKey(Language.Lang)) ? translations[Language.Lang] : type;
+            <div class="skill">
+                <SkillViewer SkillType=@_type Skills=@SkillManager.Skills.Where(s => s.type == type).ToList() />
+            </div>            
+        }        
+    </div>
+</section>
+<div class="divition" />
+<section id="contact" class="home-section">
+</section>
