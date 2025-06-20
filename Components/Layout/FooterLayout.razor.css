@@ -1,4 +1,13 @@
-﻿.footer-main-container {
+﻿/*---------------------------------------------
+    
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------*/
+
+.footer-main-container {
     background-color: var(--background-color);
     min-height: 50px;
     width: 100%;

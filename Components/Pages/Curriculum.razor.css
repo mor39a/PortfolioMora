@@ -1,4 +1,13 @@
-﻿.cv-link {
+﻿/*---------------------------------------------
+    
+    Copyright (c) 2025 Santiago Mora Pacheco
+
+    This file is under the MIT license.
+    See the LICENSE file for more details.
+
+---------------------------------------------*/
+
+.cv-link {
     --linkColor: #777;
     text-decoration: none;
     color: var(--linkColor);
