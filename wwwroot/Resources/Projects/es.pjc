@@ -1,1 +1,3 @@
 Portfolio;;true;;Aunque no soy desarrollador web, este es mi portafolio web hecho por mi con Blazor en C#.;;Blazor,C#,Visual Studio,Git,Github="https://github.com/mor39a/PortfolioMora";;none
+Laundry Manager;;false;;Base de datos en Microsoft Access con programa en VBA y sentencias SQL para gestión de facturas y prendas para una lavandería.;;Microsoft Access,VBA,SQL;;none
+Obstacle-avoiding robot;;true;;Con la intención de experimentar con diferentes elementos electrónicos, este robot evita obstáculos con sensores ultrasónicos, entre varios elementos más.;;Arduino,C++,VS Code;;none
