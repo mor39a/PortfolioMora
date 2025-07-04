@@ -19,3 +19,24 @@
 <div align="right" style="filter: blur(5px);">
   <a href="https://www.santimora.com"><img alt="QR" src=".\Resources\QR.png" width="100" height="100"><br>www.santimora.com</a>
 </div>
+
+## About the License
+
+> [!NOTE]
+> Copyright 2025 Santiago Mora Pacheco
+>
+> Project licensed under the Apache License, Version 2.0 (the "License");<br>
+> you may not use this file except in compliance with the License.<br>
+> You may obtain a copy of the License at
+>
+> http://www.apache.org/licenses/LICENSE-2.0
+>
+> Unless required by applicable law or agreed to in writing, software<br>
+> distributed under the License is distributed on an "AS IS" BASIS,<br>
+> WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>
+> See the License for the specific language governing permissions and<br>
+> limitations under the License.
+
+> [!WARNING]
+> The images and PDF files contained in this repository are not covered by the Apache 2.0 license.<br>
+> They must not be reused without explicit permission.
