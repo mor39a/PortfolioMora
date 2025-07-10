@@ -38,5 +38,6 @@
 > limitations under the License.
 
 > [!WARNING]
-> The images and PDF files contained in this repository are not covered by the Apache 2.0 license.<br>
-> They must not be reused without explicit permission.
+> The images and PDF files contained in this repository may not be covered by the Apache 2.0 license.<br>
+> They must not be reused without explicit permission.<br>
+> Please refer to the `NOTICE` file at the root of the project for a full list of assets excluded from the Apache License.
