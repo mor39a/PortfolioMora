@@ -49,7 +49,7 @@ namespace PortfolioMora.Components.Technologies {
                 IconPath = $"./Resources/Technologies/{nameFile}";
                 res = true;
             } else {
-                logger.LogError($"Path {path} dont found.");
+                logger.LogWarning($"Path {path} dont found. The technology will be displayed without a logo.");
             }
             return res;
         }
