@@ -19,7 +19,7 @@
 using Microsoft.AspNetCore.Components;
 
 namespace PortfolioMora.Components.Projects {
-    public partial class ProjectViewer {
+    public partial class ProjectViewer : ComponentBase {
 
         #region Parameters
 

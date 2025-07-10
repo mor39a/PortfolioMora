@@ -16,11 +16,11 @@
 
 ---------------------------------------------*/
 
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using System.Xml.Linq;
 
 namespace PortfolioMora.Components.Layout {
-    public partial class FooterLayout {
+    public partial class FooterLayout : ComponentBase {
 
         #region Private Declarations
 
@@ -29,7 +29,7 @@ namespace PortfolioMora.Components.Layout {
 
         #endregion
 
-        #region Protected Override Procedures
+        #region Override Procedures
 
         protected override async Task OnInitializedAsync() {
             Language.LanguageChanged += () => { curriculumPathName = $"./Resources/PDFs/CV.{Language.Lang}.pdf"; InvokeAsync(StateHasChanged); };

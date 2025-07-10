@@ -17,11 +17,10 @@
 ---------------------------------------------*/
 
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.JSInterop;
 
 namespace PortfolioMora.Components.Skills {
-    public partial class SkillViewer {
+    public partial class SkillViewer : ComponentBase {
 
         #region Parameters
 

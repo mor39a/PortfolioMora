@@ -16,8 +16,10 @@
 
 ---------------------------------------------*/
 
+using Microsoft.AspNetCore.Components;
+
 namespace PortfolioMora.Components.Pages {
-    public partial class Curriculum {
+    public partial class Curriculum : ComponentBase {
 
         #region Private Declarations
 
@@ -27,7 +29,7 @@ namespace PortfolioMora.Components.Pages {
 
         #endregion
 
-        #region Protected Override Procedures
+        #region Override Procedures
 
         protected override async Task OnInitializedAsync() {
             Language.LanguageChanged += () => { pathName = $"./Resources/PDFs/CV.{Language.Lang}.pdf"; InvokeAsync(StateHasChanged); };

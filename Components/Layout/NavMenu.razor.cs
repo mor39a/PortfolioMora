@@ -16,13 +16,15 @@
 
 ---------------------------------------------*/
 
+using Microsoft.AspNetCore.Components;
+
 namespace PortfolioMora.Components.Layout {
-    public partial class NavMenu {
+    public partial class NavMenu : ComponentBase {
 
         #region Private Declarations
 
         private bool isToggler;
-        private string? activeAboutMe;
+        private string? activeAboutMe = "active";
         private string? activeProjects;
         private string? activeSkills;
         private string? activeCurriculum;
@@ -35,7 +37,7 @@ namespace PortfolioMora.Components.Layout {
 
         #endregion
 
-        #region Protected Override Proceedures
+        #region Override Procedures
 
         protected override void OnInitialized() {
             Language.LanguageChanged += () => { selectedLanguage = Language.Lang; InvokeAsync(StateHasChanged); };
@@ -48,7 +50,7 @@ namespace PortfolioMora.Components.Layout {
 
         private void _active(string elemento) {
             string active = "active";
-            activeAboutMe = activeProjects = activeSkills = activeContact = "";
+            activeAboutMe = activeProjects = activeSkills = activeCurriculum = activeContact = "";
             switch (elemento) {
                 case "about":
                     activeAboutMe = active;

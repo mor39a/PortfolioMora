@@ -17,10 +17,9 @@
 ---------------------------------------------*/
 
 using Microsoft.AspNetCore.Components;
-using PortfolioMora.Components.Projects;
 
 namespace PortfolioMora.Components.Pages {
-    public partial class Project {
+    public partial class Project : ComponentBase {
 
         #region Parameters
 
@@ -36,7 +35,7 @@ namespace PortfolioMora.Components.Pages {
 
         #endregion
 
-        #region Protected Override Procedures
+        #region Override Procedures
 
         protected override void OnInitialized() {
             Language.LanguageChanged += () => { project = ProjectManager.GetProjects(Language.Lang).Get(projectName!); InvokeAsync(StateHasChanged); };

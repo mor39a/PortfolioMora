@@ -17,11 +17,10 @@
 ---------------------------------------------*/
 
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Logging;
 using Microsoft.JSInterop;
 
 namespace PortfolioMora.Components.Technologies {
-    public partial class TechnologiesButton {
+    public partial class TechnologiesButton : ComponentBase {
 
         #region Parameters
 

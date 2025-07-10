@@ -16,8 +16,10 @@
 
 ---------------------------------------------*/
 
+using Microsoft.AspNetCore.Components;
+
 namespace PortfolioMora.Components.Pages {
-    public partial class Projects {
+    public partial class Projects : ComponentBase {
 
         #region Private Declarations
 
@@ -26,7 +28,7 @@ namespace PortfolioMora.Components.Pages {
 
         #endregion
 
-        #region Protected Override Procedures
+        #region Override Procedures
 
         protected override void OnInitialized() {
             projects = ProjectManager.GetProjects(Language.Lang);
