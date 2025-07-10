@@ -18,25 +18,97 @@
 
 @inject LanguagesManager Language
 
-<div class="top-row navbar navbar-dark navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="" @onclick='() => _active("about")'><img src="favicon.png" alt="Logo" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapsed" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link @activeAboutMe" aria-current="page" href="#about-me" @onclick='() => _active("about")'>@GetValueByKey("about")</a>
-                <a class="nav-link @activeProjects" href="#projects" @onclick='() => _active("projects")'>@GetValueByKey("projects")</a>
-                <a class="nav-link @activeSkills" href="#skills" @onclick='() => _active("skills")'>@GetValueByKey("skills")</a>
-                <a class="nav-link @activeCurriculum" href="/Curriculum" @onclick='() => _active("curriculum")'>Curriculum</a>
-                <a class="nav-link @activeContact" href="#contact" @onclick='() => _active("contact")'>@GetValueByKey("contact")</a>
-            </div>
-            <InputSelect @bind-Value="SelectedLanguage" align="right"> @*ToDo: Re hacer mas bonito*@
-                @foreach (var availableLanguage in availableLanguages) {
-                    <option value="@availableLanguage">@availableLanguage</option>
-                }
-            </InputSelect>
+<nav>
+    <div class="nav-logo">
+        <a  href="" @onclick='() => _active("about")'><img src="favicon.png" alt="Logo" /></a>
+    </div>
+    <input name="Navigation menu" type="checkbox" class="navbar-toggler" @bind="isToggler" />
+    <div class="nav-menu@(isToggler ? " nav-show" : null)">
+        <a class="my-nav-item @activeAboutMe" aria-current="page" href="#about-me" @onclick='() => _active("about")'>@GetValueByKey("about")</a>
+        <a class="my-nav-item @activeProjects" href="#projects" @onclick='() => _active("projects")'>@GetValueByKey("projects")</a>
+        <a class="my-nav-item @activeSkills" href="#skills" @onclick='() => _active("skills")'>@GetValueByKey("skills")</a>
+        <a class="my-nav-item @activeCurriculum" href="/Curriculum" @onclick='() => _active("curriculum")'>Curriculum</a>
+        <a class="my-nav-item @activeContact" href="#contact" @onclick='() => _active("contact")'>@GetValueByKey("contact")</a>
+        <Dropdown T="string" Options="availableLanguages.Select(x => (x, x)).ToList()" OnSelected="ChangeLanguage" />
+    </div>    
+</nav>
+
+@* <nav class="fixed-top">
+    <div class="top-row ps-3 navbar navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="" @onclick='() => _active("about")'><img src="favicon.png" alt="Logo" /></a>
         </div>
     </div>
-</div>
+
+    <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+    <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+        <ul class="nav">
+            <li>
+                <NavLink href="#about-me">Hola</NavLink>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @activeAboutMe" aria-current="page" href="#about-me" @onclick='() => _active("about")'>@GetValueByKey("about")</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @activeProjects" href="#projects" @onclick='() => _active("projects")'>@GetValueByKey("projects")</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @activeSkills" href="#skills" @onclick='() => _active("skills")'>@GetValueByKey("skills")</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @activeCurriculum" href="/Curriculum" @onclick='() => _active("curriculum")'>Curriculum</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @activeContact" href="#contact" @onclick='() => _active("contact")'>@GetValueByKey("contact")</a>
+            </li>
+            <li class="nav-item">
+                <InputSelect @bind-Value="SelectedLanguage" align="right">
+                    @*ToDo: Re hacer mas bonito*@
+                    @*@foreach (var availableLanguage in availableLanguages) {
+                        <option value="@availableLanguage">@availableLanguage</option>
+                    }
+                </InputSelect>
+            </li>
+        </ul>
+    </div>
+</nav> *@
+
+@* <nav class="fixed-top navbar navbar-dark navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="" @onclick='() => _active("about")'><img src="favicon.png" alt="Logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapsed" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse" onclick="document.querySelector('.navbar-toggler').click()">
+            <ul class="navbar-nav me-auto">
+                <li>
+                    <NavLink href="#about-me">Hola</NavLink>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @activeAboutMe" aria-current="page" href="#about-me" @onclick='() => _active("about")'>@GetValueByKey("about")</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @activeProjects" href="#projects" @onclick='() => _active("projects")'>@GetValueByKey("projects")</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @activeSkills" href="#skills" @onclick='() => _active("skills")'>@GetValueByKey("skills")</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @activeCurriculum" href="/Curriculum" @onclick='() => _active("curriculum")'>Curriculum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @activeContact" href="#contact" @onclick='() => _active("contact")'>@GetValueByKey("contact")</a>
+                </li>
+                <li class="nav-item">
+                    <InputSelect @bind-Value="SelectedLanguage" align="right">
+                        @*ToDo: Re hacer mas bonito*@
+                        @*@foreach (var availableLanguage in availableLanguages) {
+                            <option value="@availableLanguage">@availableLanguage</option>
+                        }
+                    </InputSelect>
+                </li>
+            </ul>            
+        </div>
+    </div>
+</nav> *@

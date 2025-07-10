@@ -19,6 +19,8 @@
 :root {
     --main-color: #82A1B1;
     --background-color: #3E3F44;
+    --light-background-color: #48494E;
+    --dark-background-color: #38393D;
     --bottom-radius: 5px;
 }
 

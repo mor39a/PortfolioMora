@@ -1,0 +1,35 @@
+﻿<!---------------------------------------------
+
+    Copyright 2025 Santiago Mora Pacheco
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+---------------------------------------------->
+
+@typeparam T
+
+<div class="body-dropdown" style="width: @Width; height: @Height;">
+    <input name="ShowList" type="checkbox" @bind="open" />
+    <div class="main-dropdown" style="padding-block: @PaddingBlock; padding-inline: @PaddingInline;">
+        @ItemSelected
+    </div>
+    <div class="list-dropdown@(open ? " show" : null)">
+        @if (Options != null) {
+            @foreach (var Item in Options) {
+                <div class="item-dropdown" @onclick="() => OnItemSelecte(Item)">
+                    @Item.Item2
+                </div>
+            }
+        }        
+    </div>
+</div>

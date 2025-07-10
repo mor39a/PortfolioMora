@@ -21,6 +21,7 @@ namespace PortfolioMora.Components.Layout {
 
         #region Private Declarations
 
+        private bool isToggler;
         private string? activeAboutMe;
         private string? activeProjects;
         private string? activeSkills;
@@ -69,6 +70,10 @@ namespace PortfolioMora.Components.Layout {
 
         private string GetValueByKey(string key) {
             return Language.GetValueByKey(componentName, key);
+        }
+
+        private void ChangeLanguage(string lang) {
+            SelectedLanguage = lang;
         }
 
         #endregion

@@ -21,11 +21,11 @@
 @inject IJSRuntime jsRuntime
 
 <div class="page">
-    <main>
-        <nav style="position: fixed; width: 100%; z-index: 10;">
-            <NavMenu />
-        </nav>
+    <div>
+        <NavMenu />
+    </div>
 
+    <main>
         <article id="main-container" class="content px-4" style="padding: 70px; min-height: calc(100vh - 100px);">
             @Body
         </article>
