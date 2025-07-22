@@ -49,6 +49,7 @@ namespace PortfolioMora.Components.Layout {
         #region Private Procedures
 
         private void _active(string elemento) {
+            isToggler = false;
             string active = "active";
             activeAboutMe = activeProjects = activeSkills = activeCurriculum = activeContact = "";
             switch (elemento) {
