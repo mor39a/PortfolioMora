@@ -1,0 +1,5 @@
+# Vendored languages:
+wwwroot/pdfjs/** linguist-vendored
+
+# Generated languages:
+wwwroot/bootstrap/** linguist-generated
