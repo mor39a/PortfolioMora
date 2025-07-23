@@ -20,11 +20,11 @@
 @inject NavigationManager Navigation
 @inject IJSRuntime jsRuntime
 
-<div class="footer-main-container" align="center">
+<div class="footer-main-container">
     <div class="footer-sub-container">
         <div class="footer-section" style="text-align: start;">
             <h2>@GetValueByKey("nav")</h2>
-            <p style="color: var(--footerSectionColor);">
+            <p>
                 <a class="footer-link" href="#about-me">@Language.GetValueByKey("NavMenu", "about")</a>
                 <br><a class="footer-link" href="#projects">@Language.GetValueByKey("NavMenu", "projects")</a>
                 <br><a class="footer-link" href="#skills">@Language.GetValueByKey("NavMenu", "skills")</a>
@@ -32,9 +32,10 @@
                 <br><a class="footer-link" href="#contact">@Language.GetValueByKey("NavMenu", "contact")</a>
             </p>
         </div>
+        <div class="div-footer" style=""></div>
         <div class="footer-section" style="text-align: end;">
             <h2>@GetValueByKey("contact-me")</h2>
-            <p style="color: var(--footerSectionColor);">
+            <p>
                 <span style="font-weight: bold; font-style: italic; text-decoration: underline">Santiago Mora Pacheco</span>
                 <br><a class="footer-link" href="https://github.com/mor39a" target="_blank" rel="noopener">GitHub</a>
                 <br><a class="footer-link" href="https://linkedin.com/in/mora39" target="_blank" rel="noopener">LinkedIn</a>
@@ -43,8 +44,8 @@
             </p>
         </div>
     </div>
-    <div align="center" class="sub-footer" style="border-top: 1px solid var(--subFooterColor); padding-top: 5px; margin-top: 10px;">
+    <div class="sub-footer-container sub-footer">
         <p class="sub-footer">@GetValueByKey("made")</p>
-        <p class="sub-footer"><a class="footer-link subFooter" href="https://github.com/mor39a/PortfolioMora" target="_blank" rel="noopener">@GetValueByKey("source")</a> - <a class="footer-link sub-footer" href="https://raw.githubusercontent.com/mor39a/PortfolioMora/refs/heads/main/LICENSE" target="_blank" rel="noopener">@GetValueByKey("license")</a></p>
+        <p class="sub-footer"><a class="footer-link sub-footer" href="https://github.com/mor39a/PortfolioMora" target="_blank" rel="noopener">@GetValueByKey("source")</a> - <a class="footer-link sub-footer" href="https://raw.githubusercontent.com/mor39a/PortfolioMora/refs/heads/main/LICENSE" target="_blank" rel="noopener">@GetValueByKey("license")</a></p>
     </div>
 </div>
