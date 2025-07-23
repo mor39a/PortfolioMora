@@ -27,3 +27,15 @@
         color: var(--linkColor);
         cursor: pointer;
     }
+
+.cv-container {
+    width: 70%;
+}
+
+@media (max-width: 768px) {
+
+    .cv-container {
+        width: 100%;
+    }
+
+}

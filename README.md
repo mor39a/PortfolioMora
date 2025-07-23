@@ -41,3 +41,8 @@
 > The images and PDF files contained in this repository may not be covered by the Apache 2.0 license.<br>
 > They must not be reused without explicit permission.<br>
 > Please refer to the `NOTICE` file at the root of the project for a full list of assets excluded from the Apache License.
+> 
+> ---
+> 
+> This project includes third-party components that may not share the same license.<br>
+> Please refer to the `NOTICE` file at the root of the project for a full list of included components and their licenses.

@@ -1,6 +1,10 @@
-This product includes source code licensed under the Apache License, Version 2.0.
+NOTICE
 
-However, the following assets are not licensed under the Apache License:
+This product includes source code developed by Santiago Mora Pacheco licensed under the Apache License, Version 2.0.
+
+---
+
+The following assets are not licensed under the Apache License:
 
 - All files located in the `./Resources/` directory.
 - All files located in the `./wwwroot/Resources/Images/` directory.
@@ -12,3 +16,15 @@ These assets are copyrighted by Santiago Mora Pacheco.
 They may not be used, copied, modified, or distributed without prior written permission.
 
 For licensing inquiries, please contact: s.mor.a0396@gmail.com
+
+---
+
+Third-party components included:
+
+1. PDF.js (by Mozilla Foundation)
+   This product includes software developed by Mozilla Foundation
+   (https://mozilla.org) in the form of the PDF.js library.
+   PDF.js is licensed under the Apache License 2.0.
+   Source: https://github.com/mozilla/pdf.js
+
+   No changes have been made to this component.

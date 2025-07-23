@@ -24,7 +24,7 @@ namespace PortfolioMora.Components.Pages {
         #region Private Declarations
 
         private readonly string componentName = "CV";
-        private string pathName = "./Resources/PDFs/CV.en.pdf";
+        private string pathName = "/Resources/PDFs/CV.en.pdf";
         private int viewer = 0;
 
         #endregion
@@ -32,7 +32,7 @@ namespace PortfolioMora.Components.Pages {
         #region Override Procedures
 
         protected override async Task OnInitializedAsync() {
-            Language.LanguageChanged += () => { pathName = $"./Resources/PDFs/CV.{Language.Lang}.pdf"; InvokeAsync(StateHasChanged); };
+            Language.LanguageChanged += () => { pathName = $"/Resources/PDFs/CV.{Language.Lang}.pdf"; InvokeAsync(StateHasChanged); };
             await base.OnInitializedAsync();
         }
 
