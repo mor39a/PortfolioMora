@@ -44,5 +44,21 @@
     justify-content: start;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
     margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .project-header {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .project-name {
+        text-align: center;
+    }
+
+    .active-project-box {
+        margin-bottom: 15px;
+    }
 }
