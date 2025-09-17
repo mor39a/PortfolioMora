@@ -28,8 +28,8 @@
         </div>
     }    
     <div class="project-info">
-        <div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
-            <h2 style="cursor: pointer;" @onclick='() => Navigation.NavigateTo($"/Project/{ProjectName}")'>@ProjectName</h2>
+        <div class="project-main-info">
+            <h2 class="project-name" @onclick='() => Navigation.NavigateTo($"/Project/{ProjectName}")'>@ProjectName</h2>
             @if (!string.IsNullOrEmpty(ProjectState)) {
                 <div class="active-project-box">@ProjectState</div>
             }

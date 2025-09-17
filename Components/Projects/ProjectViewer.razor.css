@@ -30,6 +30,18 @@
     text-align: left;
 }
 
+.project-main-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-name {
+    cursor: pointer;
+}
+
 .active-project-box {
     color: white;
     border: 1px solid green;
@@ -42,8 +54,27 @@
 
 .project-technologies {
     display: flex;
+    flex-direction: row;
     justify-content: start;
     align-items: center;
     gap: 10px;
     margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .project-main-info {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .project-name {
+        text-align: center;
+    }
+
+    .project-technologies {
+        flex-direction: column;
+        align-items: start;
+        margin-top: 12px;
+        gap: 5px;
+    }
 }
