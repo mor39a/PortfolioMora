@@ -42,6 +42,16 @@
     border: 7px solid var(--main-color);
 }
 
+.info-section {
+    flex: 4;
+}
+
+.home-buttons {
+    justify-content: start;
+    gap: 30px;
+    margin-top: 30px;
+}
+
 .project {
     display: flex;
     justify-content: center;
@@ -60,4 +70,33 @@
     width: calc((100% - (40px * 2 * 3)) / 3);
     margin-inline: 40px;
     margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    
+    h1 {
+        text-align: center;
+    }
+
+    #about-me h1 {
+        text-align: start;
+    }
+
+    .horizont-content {
+        flex-wrap: wrap;
+    }
+
+    .profile-photo {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .info-section {
+        flex: auto;
+    }
+
+    .home-buttons {
+        gap: 5px;
+        margin-top: 15px;
+    }
 }
