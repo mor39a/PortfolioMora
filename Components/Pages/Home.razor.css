@@ -46,7 +46,7 @@
     flex: 4;
 }
 
-.home-buttons {
+.about-me-buttons {
     justify-content: start;
     gap: 30px;
     margin-top: 30px;
@@ -78,6 +78,14 @@
         text-align: center;
     }
 
+    .home-section {
+        margin-inline: 0px;
+    }
+
+    .divition {
+        width: 80%;
+    }
+
     #about-me h1 {
         text-align: start;
     }
@@ -95,7 +103,7 @@
         flex: auto;
     }
 
-    .home-buttons {
+    .about-me-buttons {
         gap: 5px;
         margin-top: 15px;
     }
