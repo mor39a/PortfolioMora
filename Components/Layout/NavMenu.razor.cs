@@ -24,11 +24,6 @@ namespace PortfolioMora.Components.Layout {
         #region Private Declarations
 
         private bool isToggler;
-        private string? activeAboutMe = "active";
-        private string? activeProjects;
-        private string? activeSkills;
-        private string? activeCurriculum;
-        private string? activeContact;
 
         private readonly string componentName = "NavMenu";
         private string selectedLanguage = "en";
@@ -41,35 +36,13 @@ namespace PortfolioMora.Components.Layout {
 
         protected override void OnInitialized() {
             Language.LanguageChanged += () => { selectedLanguage = Language.Lang; InvokeAsync(StateHasChanged); };
+            NavItems.ForEach(item => item.StateChanged += () => InvokeAsync(StateHasChanged));
             base.OnInitialized();
         }
 
         #endregion
 
         #region Private Procedures
-
-        private void _active(string elemento) {
-            isToggler = false;
-            string active = "active";
-            activeAboutMe = activeProjects = activeSkills = activeCurriculum = activeContact = "";
-            switch (elemento) {
-                case "about":
-                    activeAboutMe = active;
-                    break;
-                case "projects":
-                    activeProjects = active;
-                    break;
-                case "skills":
-                    activeSkills = active;
-                    break;
-                case "curriculum":
-                    activeCurriculum = active;
-                    break;
-                case "contact":
-                    activeContact = active;
-                    break;
-            }
-        }
 
         private string GetValueByKey(string key) {
             return Language.GetValueByKey(componentName, key);

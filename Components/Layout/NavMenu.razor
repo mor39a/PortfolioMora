@@ -17,18 +17,17 @@
 ---------------------------------------------->
 
 @inject LanguagesManager Language
+@inject NavItems NavItems
 
 <nav>
     <div class="nav-logo">
-        <a  href="" @onclick='() => _active("about")'><img src="favicon.png" alt="Logo" /></a>
+        <a href="" @onclick='() => { NavItems.deactivateAll(); NavItems.First().Active = true; }'><img src="favicon.png" alt="Logo" /></a>
     </div>
     <input name="Navigation menu" type="checkbox" class="navbar-toggler" @bind="isToggler" />
     <div class="nav-menu@(isToggler ? " nav-show" : null)">
-        <a class="my-nav-item @activeAboutMe" aria-current="page" href="#about-me" @onclick='() => _active("about")'>@GetValueByKey("about")</a>
-        <a class="my-nav-item @activeProjects" href="#projects" @onclick='() => _active("projects")'>@GetValueByKey("projects")</a>
-        <a class="my-nav-item @activeSkills" href="#skills" @onclick='() => _active("skills")'>@GetValueByKey("skills")</a>
-        <a class="my-nav-item @activeCurriculum" href="/Curriculum" @onclick='() => _active("curriculum")'>Curriculum</a>
-        <a class="my-nav-item @activeContact" href="#contact" @onclick='() => _active("contact")'>@GetValueByKey("contact")</a>
+        @foreach (NavItem item in NavItems) {
+            <a class="my-nav-item @(item.Active ? "active" : null)" href=@item.href @onclick='() => { NavItems.deactivateAll(); item.Active = true; isToggler = false; }'>@GetValueByKey(item.Name)</a>
+        }
         <Dropdown T="string" Options="availableLanguages.Select(x => (x, x)).ToList()" OnSelected="ChangeLanguage" />
     </div>    
 </nav>

@@ -1,5 +1,6 @@
 using PortfolioMora.Components;
 using PortfolioMora.Components.Languages;
+using PortfolioMora.Components.NavItems;
 using PortfolioMora.Components.Projects;
 using PortfolioMora.Components.Skills;
 
@@ -10,6 +11,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddSingleton<LanguagesManager>();
+builder.Services.AddSingleton<NavItems>();
 builder.Services.AddSingleton<ProjectsManager>();
 builder.Services.AddSingleton<SkillsManager>();
 

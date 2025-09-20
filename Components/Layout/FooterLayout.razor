@@ -17,6 +17,7 @@
 ---------------------------------------------->
 
 @inject LanguagesManager Language
+@inject NavItems NavItems
 @inject NavigationManager Navigation
 @inject IJSRuntime jsRuntime
 
@@ -24,24 +25,24 @@
     <div class="footer-sub-container">
         <div class="footer-section" style="text-align: start;">
             <h2>@GetValueByKey("nav")</h2>
-            <p>
-                <a class="footer-link" href="#about-me">@Language.GetValueByKey("NavMenu", "about")</a>
-                <br><a class="footer-link" href="#projects">@Language.GetValueByKey("NavMenu", "projects")</a>
-                <br><a class="footer-link" href="#skills">@Language.GetValueByKey("NavMenu", "skills")</a>
-                <br><a class="footer-link" href="/Curriculum">Curriculum</a>
-                <br><a class="footer-link" href="#contact">@Language.GetValueByKey("NavMenu", "contact")</a>
-            </p>
+            @*<a class="footer-link" href="#about-me">@Language.GetValueByKey("NavMenu", "about")</a>
+            <a class="footer-link" href="#projects">@Language.GetValueByKey("NavMenu", "projects")</a>
+            <a class="footer-link" href="#skills">@Language.GetValueByKey("NavMenu", "skills")</a>
+            <a class="footer-link" href="/Curriculum">Curriculum</a>
+            <a class="footer-link" href="#contact">@Language.GetValueByKey("NavMenu", "contact")</a>*@
+            @foreach(NavItem item in NavItems)
+            {
+                <a class="footer-link" href=@item.href @onclick='() => { NavItems.deactivateAll(); item.Active = true; }'>@Language.GetValueByKey("NavMenu", item.Name)</a>
+            }
         </div>
         <div class="div-footer" style=""></div>
         <div class="footer-section" style="text-align: end;">
             <h2>@GetValueByKey("contact-me")</h2>
-            <p>
-                <span style="font-weight: bold; font-style: italic; text-decoration: underline">Santiago Mora Pacheco</span>
-                <br><a class="footer-link" href="https://github.com/mor39a" target="_blank" rel="noopener">GitHub</a>
-                <br><a class="footer-link" href="https://linkedin.com/in/mora39" target="_blank" rel="noopener">LinkedIn</a>
-                <br><a class="footer-link" href=@curriculumPathName download="Curriculum_Santiago_Mora.pdf">Curriculum</a>
-                <br><a class="footer-link" href="mailto:s.mor.a0396@gmail.com?Subject=Hi%20Mora" target="_blank" rel="noopener">Email</a>
-            </p>
+            <p style="font-weight: bold; font-style: italic; text-decoration: underline">Santiago Mora Pacheco</p>
+            <a class="footer-link" href="https://github.com/mor39a" target="_blank" rel="noopener">GitHub</a>
+            <a class="footer-link" href="https://linkedin.com/in/mora39" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="footer-link" href=@curriculumPathName download="Curriculum_Santiago_Mora.pdf">Curriculum</a>
+            <a class="footer-link" href="mailto:s.mor.a0396@gmail.com?Subject=Hi%20Mora" target="_blank" rel="noopener">Email</a>
         </div>
     </div>
     <div class="sub-footer-container sub-footer">
